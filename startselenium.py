@@ -12,5 +12,9 @@ url = 'http://www.srcmake.com/'
 driver = webdriver.Chrome(chrome_options=options)
 
 # Directing the driver to the defined url
-driver.get('https://youtube.com')
-print(driver.title)
+driver.get('https://www.ipaddress.my/')
+# ippp = driver.find_element_by_css_selector("span#ipv4 > a::text")
+# print("HTML code of element: " + ippp.get_attribute('innerHTML'))
+elem = driver.find_element_by_xpath("/html/body/div[1]/div[2]/div[2]/table/tbody/tr/td/div/div/ul")
+source_code = elem.get_attribute("outerHTML")
+print(source_code)
