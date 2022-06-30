@@ -29,21 +29,21 @@ sleep(10)
 
 
 ######################################################STSRT##########################################
-# driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div/div[3]/div/div/div[1]/form/div[2]/div[1]/input").send_keys("tobeytompson68599@gmail.com")
-######################################################
-# sleep(3)
+driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div/div[3]/div/div/div[1]/form/div[2]/div[1]/input").send_keys("tobeytompson68599@gmail.com")
+#####################################################
+sleep(3)
 
-# driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div/div[3]/div/div/div[1]/form/div[2]/div[2]/a") \
-#     .click()
+driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div/div[3]/div/div/div[1]/form/div[2]/div[2]/a") \
+    .click()
 
 
-# sleep(10)
+sleep(10)
 
-# elem = driver.find_element_by_xpath("/html/body/div[1]/div/div/h1")
+elem = driver.find_element_by_xpath("/html/body/div[1]/div/div/h1")
 
-# source_code = elem.get_attribute("outerHTML")
-# print(source_code)
-# sleep(10)
+source_code = elem.get_attribute("outerHTML")
+print(source_code)
+sleep(10)
 ###########################################################END##########################################################################
 
 
