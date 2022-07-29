@@ -22,14 +22,14 @@ driver = webdriver.Chrome(chrome_options=options)
 
 # Directing the driver to the defined url
 # driver.get('https://www.sps-software.net/')
-driver.get('https://www.shareasale.com/r.cfm?b=421982&u=3160918&m=43951')
+driver.get('https://www.shareasale.com/r.cfm?b=421982&u=3161018&m=43951')
 
 sleep(10)
 
 
 
 ######################################################STSRT##########################################
-driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div/div[3]/div/div/div[1]/form/div[2]/div[1]/input").send_keys("tobeytompson68599@gmail.com")
+driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div/div[3]/div/div/div[1]/form/div[2]/div[1]/input").send_keys("davidjoel1992ki@gmail.com")
 #####################################################
 sleep(3)
 
