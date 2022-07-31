@@ -37,13 +37,13 @@ driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div/div[3]/div/div/di
     .click()
 
 
-sleep(10)
+sleep(4)
 
 elem = driver.find_element_by_xpath("/html/body/div[1]/div/div/h1")
 
 source_code = elem.get_attribute("outerHTML")
 print(source_code)
-sleep(10)
+sleep(3)
 ###########################################################END##########################################################################
 
 
