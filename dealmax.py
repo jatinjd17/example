@@ -82,7 +82,8 @@ def RunScript():
     print(email)
 
     time.sleep(1)
-    bot.find_element_by_xpath('//*[@id="entry-form"]/div[7]/a').click()
+    bot.find_element_by_xpath('//*[@id="email"]').send_keys(Keys.ENTER)
+    #bot.find_element_by_xpath('//*[@id="entry-form"]/div[7]/a').click()
 
     # time.sleep(1)
 
