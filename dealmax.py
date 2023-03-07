@@ -35,7 +35,7 @@ options.add_argument(f'user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) Appl
 # options.add_argument(r"--user-data-dir=C:\Users\jatin\AppData\Local\Google\Chrome\User Data") #e.g. C:\Users\You\AppData\Local\Google\Chrome\User Data
 # options.add_argument('profile-directory=Default')
 # options.add_argument('--window-size=1920,1080')
-# options.add_argument("--headless")
+options.add_argument("--headless")
 time.sleep(2)
 
 def RunScript():
