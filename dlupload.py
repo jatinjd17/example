@@ -50,7 +50,7 @@ def RunScript():
 
     # time.sleep(4)
 
-    # bot.execute_script("document.body.style.zoom='70%'")
+    bot.execute_script("document.body.style.zoom='70%'")
 
     time.sleep(3)
 
