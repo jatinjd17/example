@@ -13,9 +13,6 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 import io
-from PIL import Image
-import base64
-from fake_useragent import UserAgent
 
 
 print("INIT")
