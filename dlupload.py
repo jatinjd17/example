@@ -19,8 +19,8 @@ options = webdriver.ChromeOptions()
 # ua = UserAgent()
 # userAgent = ua.random
 # print(userAgent)
-#options.add_argument('--window-size=1920,1080')
-options.add_argument('--window-size=1325,744')
+options.add_argument('--window-size=1920,1080')
+#options.add_argument('--window-size=1325,744')
 options.add_argument("--disable-blink-features=AutomationControlled") 
 
  
