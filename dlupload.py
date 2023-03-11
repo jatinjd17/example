@@ -35,6 +35,7 @@ options.add_argument(f'user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) Appl
 # options.add_argument('profile-directory=Default')
 # options.add_argument('--window-size=1920,1080')
 options.add_argument("--headless", "--start-fullscreen")
+options.add_argument("--start-fullscreen")
 time.sleep(2)
 
 def RunScript():
