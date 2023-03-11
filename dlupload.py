@@ -75,7 +75,9 @@ def RunScript():
     # email = (firstname + lastname + str(random.randrange(51000,2000000)) + '@gmail.com').lower()
 
     
-    bot.find_element_by_xpath('/html/body/div[3]/div/div[2]/div/div[1]/div[5]/div[2]/div[2]/div/div[3]/div[2]/div/div').click()
+    #bot.find_element_by_xpath('/html/body/div[3]/div/div[2]/div/div[1]/div[5]/div[2]/div[2]/div/div[3]/div[2]/div/div').click()
+    
+    bot.find_element_by_css_selector('div.d.d-md-flex.arrange > div > div.btn.btn-block.btn-primary.text-white.shadow.m-1.position-relative.up-tooltip-container').click() 
 
 
     time.sleep(4)
