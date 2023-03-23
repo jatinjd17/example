@@ -257,7 +257,7 @@ def RunScript():
 
 
 
-    time.sleep(25)
+    time.sleep(30)
     print('done')
     bot.quit()
 
