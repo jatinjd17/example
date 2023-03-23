@@ -70,7 +70,7 @@ def RunScript():
 
     
 
-    # bot.get('https://www.shareasale.com/r.cfm?b=15440&u=2874505&m=4421')
+    bot.get('https://www.shareasale.com/r.cfm?b=15440&u=2874505&m=4421')
 
     time.sleep(3)
 
