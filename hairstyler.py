@@ -162,12 +162,14 @@ def RunScript():
     
         # download the mp3 audio file from the source
         urllib.request.urlretrieve(src, path_to_mp3)
-    except:
+    except Exception as e:
+        print(e)
         # if ip is blocked.. renew tor ip
         print("[INFO] IP address has been blocked for recaptcha.")
         # if activate_tor:
         #     renew_ip(CONTROL_PORT)
-        sys.exit()    
+        #sys.exit()   
+        pass 
 
     # load downloaded mp3 audio file as .wav
     try:
@@ -175,23 +177,27 @@ def RunScript():
         sound.export(path_to_wav, format="wav")
         sample_audio = sr.AudioFile(path_to_wav)
     except Exception:
-        sys.exit(
-            "[ERR] Please run program as administrator or download ffmpeg manually, "
-            "https://blog.gregzaal.com/how-to-install-ffmpeg-on-windows/"
-        )
+        pass
+        # sys.exit(
+        #     "[ERR] Please run program as administrator or download ffmpeg manually, "
+        #     "https://blog.gregzaal.com/how-to-install-ffmpeg-on-windows/"
+        # )
 
     # translate audio to text with google voice recognition
-    time.sleep(5)
-    r = sr.Recognizer()
-    with sample_audio as source:
-        audio = r.record(source)
-    key = r.recognize_google(audio,language='en-IN')
-    print(f"[INFO] Recaptcha Passcode: {key}")
+    try:
+        time.sleep(5)
+        r = sr.Recognizer()
+        with sample_audio as source:
+            audio = r.record(source)
+        key = r.recognize_google(audio,language='en-IN')
+        print(f"[INFO] Recaptcha Passcode: {key}")
 
-    # key in results and submit
-    time.sleep(5)
-    bot.find_element_by_id("audio-response").send_keys(key.lower())
-    bot.find_element_by_id("audio-response").send_keys(Keys.ENTER)
+        # key in results and submit
+        time.sleep(5)
+        bot.find_element_by_id("audio-response").send_keys(key.lower())
+        bot.find_element_by_id("audio-response").send_keys(Keys.ENTER)
+    except:
+        pass
     # time.sleep(5)
     # bot.switch_to.default_content()
     # time.sleep(5)
