@@ -1,8 +1,6 @@
 import time, os 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-# from random import randrange
-import random
 import names
 from itertools import islice
 from selenium.webdriver.common.keys import Keys
@@ -10,7 +8,11 @@ from selenium.webdriver import ActionChains
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import io
+import urllib
+import pydub
+import speech_recognition as sr
+import re
+import sys
 
 
 print("INIT")
@@ -39,6 +41,10 @@ time.sleep(2)
 def RunScript():
     bot = webdriver.Chrome(chrome_options=options)
 
+    # bot.get('https://www.thehairstyler.com/signup')
+
+    # time.sleep(8)
+
     
 
     # bot.execute_script("document.body.style.zoom='-80%'")
@@ -62,10 +68,9 @@ def RunScript():
 
     time.sleep(2)
 
-    # bot.get("https://www.shareasale.com/r.cfm?b=1261297&u=2885514&m=83604")
-    # time.sleep(6)
+    
 
-    bot.get('https://www.shareasale.com/r.cfm?b=15440&u=2874505&m=4421')
+    # bot.get('https://www.shareasale.com/r.cfm?b=15440&u=2874505&m=4421')
 
     time.sleep(3)
 
@@ -106,13 +111,97 @@ def RunScript():
 
     # '//*[@id="email"]'
 
-    WebDriverWait(bot, 10).until(EC.frame_to_be_available_and_switch_to_it((By.CSS_SELECTOR,"iframe[title^='reCAPTCHA']")))
+    # WebDriverWait(bot, 10).until(EC.frame_to_be_available_and_switch_to_it((By.CSS_SELECTOR,"iframe[title^='reCAPTCHA']")))
 
-    # WebDriverWait(bot, 10).until(EC.frame_to_be_available_and_switch_to_it((By.CSS_SELECTOR,"iframe[name^='google_esf'][src^='https://googleads.g.doubleclick.net/pagead/html/r20230308/r20190131/zrt_lookup.html']")))
-    WebDriverWait(bot, 10).until(EC.element_to_be_clickable((By.XPATH, "//span[@id='recaptcha-anchor']"))).click()
+    # # WebDriverWait(bot, 10).until(EC.frame_to_be_available_and_switch_to_it((By.CSS_SELECTOR,"iframe[name^='google_esf'][src^='https://googleads.g.doubleclick.net/pagead/html/r20230308/r20190131/zrt_lookup.html']")))
+    # WebDriverWait(bot, 10).until(EC.element_to_be_clickable((By.XPATH, "//span[@id='recaptcha-anchor']"))).click()
+
+    try:
+        time.sleep(2)
+        frames = bot.find_elements_by_tag_name("iframe")
+        recaptcha_control_frame = None
+        recaptcha_challenge_frame = None
+        for index, frame in enumerate(frames):
+            if re.search('reCAPTCHA', frame.get_attribute("title")):
+                recaptcha_control_frame = frame
+                
+            if re.search('recaptcha challenge', frame.get_attribute("title")):
+                recaptcha_challenge_frame = frame
+        if not (recaptcha_control_frame and recaptcha_challenge_frame):
+            print("[ERR] Unable to find recaptcha. Abort solver.")
+            sys.exit()
+        # switch to recaptcha frame
+        time.sleep(5)
+        frames = bot.find_elements_by_tag_name("iframe")
+        bot.switch_to.frame(recaptcha_control_frame)
+        # click on checkbox to activate recaptcha
+        bot.find_element_by_class_name("recaptcha-checkbox-border").click()
+    
+        # switch to recaptcha audio control frame
+        time.sleep(5)
+        bot.switch_to.default_content()
+        frames = bot.find_elements_by_tag_name("iframe")
+        bot.switch_to.frame(recaptcha_challenge_frame)
+    
+        # click on audio challenge
+        time.sleep(10)
+        bot.find_element_by_id("recaptcha-audio-button").click()
+    
+        # switch to recaptcha audio challenge frame
+        bot.switch_to.default_content()
+        frames = bot.find_elements_by_tag_name("iframe")
+        bot.switch_to.frame(recaptcha_challenge_frame)
+    
+        # get the mp3 audio file
+        time.sleep(5)
+        src = bot.find_element_by_id("audio-source").get_attribute("src")
+        print(f"[INFO] Audio src: {src}")
+    
+        path_to_mp3 = os.path.normpath(os.path.join(os.getcwd(), "sample.mp3"))
+        path_to_wav = os.path.normpath(os.path.join(os.getcwd(), "sample.wav"))
+    
+        # download the mp3 audio file from the source
+        urllib.request.urlretrieve(src, path_to_mp3)
+    except:
+        # if ip is blocked.. renew tor ip
+        print("[INFO] IP address has been blocked for recaptcha.")
+        # if activate_tor:
+        #     renew_ip(CONTROL_PORT)
+        sys.exit()    
+
+    # load downloaded mp3 audio file as .wav
+    try:
+        sound = pydub.AudioSegment.from_mp3(path_to_mp3)
+        sound.export(path_to_wav, format="wav")
+        sample_audio = sr.AudioFile(path_to_wav)
+    except Exception:
+        sys.exit(
+            "[ERR] Please run program as administrator or download ffmpeg manually, "
+            "https://blog.gregzaal.com/how-to-install-ffmpeg-on-windows/"
+        )
+
+    # translate audio to text with google voice recognition
+    time.sleep(5)
+    r = sr.Recognizer()
+    with sample_audio as source:
+        audio = r.record(source)
+    key = r.recognize_google(audio,language='en-IN')
+    print(f"[INFO] Recaptcha Passcode: {key}")
+
+    # key in results and submit
+    time.sleep(5)
+    bot.find_element_by_id("audio-response").send_keys(key.lower())
+    bot.find_element_by_id("audio-response").send_keys(Keys.ENTER)
+    # time.sleep(5)
+    # bot.switch_to.default_content()
+    # time.sleep(5)
+    # bot.find_element_by_id("recaptcha-demo-submit").click()
+    # time.sleep(300)
+    # if (tor_process):
+    #     tor_process.kill()
 
 
-    time.sleep(10)
+    time.sleep(5)
 
 
     bot.switch_to.default_content()
@@ -156,13 +245,6 @@ def RunScript():
     
 
 
-    # bot.find_element_by_xpath('//*[@id="email-table"]/div[2]/div[4]/div[3]/p[3]/a').click()
-
-
-    # bot.find_element_by_xpath('/html/body/div[3]/div/div/div/div[2]/div[2]/div[4]/div[3]/p[3]/a').click()
-    
-
-
     
 
     
@@ -170,7 +252,7 @@ def RunScript():
 
 
     time.sleep(25)
-    print(done)
+    print('done')
     bot.quit()
 
 
