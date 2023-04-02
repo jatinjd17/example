@@ -61,7 +61,7 @@ def RunScript():
     #####################################################
     time.sleep(1)
 
-    bot.find_element_by_xpath("//*[@id='email']").send_keys(email)
+    bot.find_element_by_xpath("//*[@id='email']").send_keys("bosco.oswin@doojazz.com")
     #####################################################
     time.sleep(1)
 
