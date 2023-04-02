@@ -57,7 +57,7 @@ def RunScript():
     #####################################################
     time.sleep(1)
 
-    bot.find_element_by_xpath("//*[@id='password']").send_keys("jakewill@123")
+    bot.find_element_by_xpath("//*[@id='password']").send_keys("Jakewill@123")
     #####################################################
     time.sleep(1)
 
