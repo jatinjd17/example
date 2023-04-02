@@ -84,12 +84,9 @@ def RunScript():
 
 
 
-    time.sleep(15)
-    elem = bot.find_element_by_xpath("//*")
-    source_code = elem.get_attribute("outerHTML")
-    
-    print(source_code)
+    time.sleep(8)
     print('Done!!!')
+    time.sleep(2)
     bot.quit()
 
 
