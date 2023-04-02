@@ -46,8 +46,10 @@ def RunScript():
     bot.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})") 
 
     bot.get('https://www.shareasale.com/r.cfm?b=2092437&u=3595269&m=128168')
+    
+    time.sleep(3)
 
-    # bot.get('https://my.cozi.com/signup/')
+    bot.get('https://my.cozi.com/signup/')
 
     time.sleep(4)
 
@@ -78,7 +80,7 @@ def RunScript():
 
 
 
-    time.sleep(8)
+    time.sleep(15)
     print('Done!!!')
     bot.quit()
 
