@@ -75,6 +75,9 @@ def RunScript():
 
     bot.find_element_by_xpath("//*[@id='app']/main/div[2]/div/div[1]/div/div[1]/div/button") \
         .click()
+    
+    
+    
 
 
     
@@ -82,6 +85,10 @@ def RunScript():
 
 
     time.sleep(15)
+    elem = bot.find_element_by_xpath("//*")
+    source_code = elem.get_attribute("outerHTML")
+    
+    print(source_code)
     print('Done!!!')
     bot.quit()
 
