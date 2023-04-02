@@ -57,24 +57,24 @@ def RunScript():
 
 
     ######################################################STSRT##########################################
-    bot.find_element_by_xpath("//*[@id='first_name']").send_keys(firstname[0])
+    #bot.find_element_by_xpath("//*[@id='first_name']").send_keys(firstname[0])
     #####################################################
-    time.sleep(1)
+    #time.sleep(1)
 
-    bot.find_element_by_xpath("//*[@id='email']").send_keys(email)
+    #bot.find_element_by_xpath("//*[@id='email']").send_keys(email)
     #####################################################
-    time.sleep(1)
+    #time.sleep(1)
 
-    bot.find_element_by_xpath("//*[@id='password']").send_keys("Jakewill@123")
+    #bot.find_element_by_xpath("//*[@id='password']").send_keys("Jakewill@123")
     #####################################################
-    time.sleep(1)
+    #time.sleep(1)
 
-    bot.find_element_by_xpath("//*[@id='household_name']").send_keys(firstname[0])
+    #bot.find_element_by_xpath("//*[@id='household_name']").send_keys(firstname[0])
     #####################################################
-    time.sleep(1)
+    #time.sleep(1)
 
-    bot.find_element_by_xpath("//*[@id='app']/main/div[2]/div/div[1]/div/div[1]/div/button") \
-        .click()
+    #bot.find_element_by_xpath("//*[@id='app']/main/div[2]/div/div[1]/div/div[1]/div/button") \
+        #.click()
     
     
     
@@ -84,7 +84,7 @@ def RunScript():
 
 
 
-    time.sleep(8)
+    #time.sleep(8)
     print('Done!!!')
     time.sleep(2)
     bot.quit()
