@@ -39,7 +39,7 @@ def RunScript():
 
     
 
-    # bot.execute_script("document.body.style.zoom='-80%'")
+    bot.execute_script("document.body.style.zoom='30%'")
 
     bot.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})") 
     
