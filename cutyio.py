@@ -44,7 +44,8 @@ options.add_argument('--disable-popup-blocking')
 # lastname = (names.get_last_name()).lower()
 # email = firstname+'_'+lastname+str(random.randrange(400,2000))+'@outlook.com'
 # print(email)
-bot = uc.Chrome(options=options)
+# bot = uc.Chrome(options=options)
+bot = webdriver.Chrome(chrome_options=options)
 
 bot.get('https://www.google.com/')
 time.sleep(3)
