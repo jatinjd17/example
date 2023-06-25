@@ -51,7 +51,7 @@ time.sleep(3)
 bot.save_screenshot('001.png')
 bot.get('https://cuty.io/I3kl1')
 
-time.sleep(5)
+time.sleep(10)
 
 try:
     bot.save_screenshot('01.png')
