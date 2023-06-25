@@ -38,7 +38,7 @@ count = 1
 options = webdriver.ChromeOptions() 
 # options.headless = True
 options.add_argument('--headless')
-options.add_argument('--window-size=1920,1080')
+# options.add_argument('--window-size=1920,1080')
 options.add_argument('--disable-popup-blocking')
 # firstname = (names.get_first_name(gender='male')).lower()
 # lastname = (names.get_last_name()).lower()
@@ -51,7 +51,7 @@ time.sleep(3)
 bot.save_screenshot('001.png')
 bot.get('https://cuty.io/I3kl1')
 
-time.sleep(10)
+time.sleep(5)
 
 try:
     bot.save_screenshot('01.png')
