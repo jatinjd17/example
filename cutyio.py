@@ -53,6 +53,7 @@ bot.get('https://cuty.io/I3kl1')
 time.sleep(5)
 
 try:
+    bot.save_screenshot('01.png')
 
     element1 = WebDriverWait(bot,20).until(EC.element_to_be_clickable((By.XPATH, "//button[contains(text(),'Continue')]")))
 except Exception as e:
