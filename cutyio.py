@@ -52,7 +52,14 @@ bot.get('https://cuty.io/I3kl1')
 
 time.sleep(5)
 
-element1 = WebDriverWait(bot,20).until(EC.element_to_be_clickable((By.XPATH, "//button[contains(text(),'Continue')]")))
+try:
+
+    element1 = WebDriverWait(bot,20).until(EC.element_to_be_clickable((By.XPATH, "//button[contains(text(),'Continue')]")))
+except Exception as e:
+    print('yoooo')
+    print(e)
+    print('noooooo')
+
 time.sleep(4)
 
 
