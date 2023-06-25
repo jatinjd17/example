@@ -46,7 +46,7 @@ def RunScript():
     bot.get('https://cuty.io/I3kl1')
 
     time.sleep(10)
-    bot.save_screenshot('0011.png')
+    bot.save_screenshot('00111.png')
 
     
 
