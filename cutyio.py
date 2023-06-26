@@ -54,7 +54,7 @@ bot = uc.Chrome(options=options)
 bot.get('https://www.google.com/')
 time.sleep(3)
 bot.save_screenshot('001.png')
-bot.get('https://cuty.io/j727Q37LQ9xa')
+bot.get('https://cuty.io/ZGmoBQ4h')
 
 time.sleep(5)
 
