@@ -266,10 +266,10 @@ def RunScript():
 
     print("The current url is:"+str(get_url))
     time.sleep(2)
-    bot.switch_to.window(bot.window_handles[2])
-    get_url = bot.current_url
+    #bot.switch_to.window(bot.window_handles[2])
+    #get_url = bot.current_url
 
-    print("The current url is:"+str(get_url))
+    #print("The current url is:"+str(get_url))
 
 
     
@@ -281,7 +281,7 @@ def RunScript():
 
 
 
-    time.sleep(1)
+    #time.sleep(1)
     print('done')
     bot.quit()
 
