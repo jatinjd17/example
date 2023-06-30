@@ -558,7 +558,7 @@ class InstAut:
 
         print("The current url is:"+str(get_url))
 
-        time.sleep(1)
+        time.sleep(10)
 
 
         bot.close()
