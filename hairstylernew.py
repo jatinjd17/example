@@ -119,6 +119,17 @@ def RunScript():
     time.sleep(1)
 
     bot.find_element(By.XPATH, '//*[@id="user_password_confirmation"]').send_keys("Jatin@123")
+    element2 = WebDriverWait(bot,20).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="user_password_confirmation"]')))
+
+    desired_y = (element2.size['height'] / 2) + element2.location['y']
+    window_h = bot.execute_script('return window.innerHeight')
+    window_y = bot.execute_script('return window.pageYOffset')
+    current_y = (window_h / 2) + window_y
+    scroll_y_by2 = desired_y - current_y
+
+        # print(scroll_y_by2)
+
+    bot.execute_script("window.scrollBy(0, arguments[0]);", scroll_y_by2)
 
     # '//*[@id="last_name"]'
 
