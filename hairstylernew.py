@@ -119,7 +119,7 @@ def RunScript():
     time.sleep(1)
 
     bot.find_element(By.XPATH, '//*[@id="user_password_confirmation"]').send_keys("Jatin@123")
-    element2 = WebDriverWait(bot,20).until(EC.element_to_be_clickable(By.XPATH, '//*[@id="user_password_confirmation"]'))
+    element2 = bot.find_element(By.XPATH, '//*[@id="user_password_confirmation"]')
 
     desired_y = (element2.size['height'] / 2) + element2.location['y']
     window_h = bot.execute_script('return window.innerHeight')
