@@ -141,6 +141,7 @@ def RunScript():
     # WebDriverWait(bot, 10).until(EC.element_to_be_clickable((By.XPATH, "//span[@id='recaptcha-anchor']"))).click()
 
     try:
+        bot.save_screenshot('1.png')
         time.sleep(2)
         frames = bot.find_elements(By.TAG_NAME, "iframe")
         recaptcha_control_frame = None
@@ -156,10 +157,13 @@ def RunScript():
             sys.exit()
         # switch to recaptcha frame
         time.sleep(5)
+        bot.save_screenshot('12.png')
         frames = bot.find_elements(By.TAG_NAME, "iframe")
         bot.switch_to.frame(recaptcha_control_frame)
         # click on checkbox to activate recaptcha
+        bot.save_screenshot('122.png')
         bot.find_element(By.CLASS_NAME, "recaptcha-checkbox-border").click()
+        bot.save_screenshot('2.png')
     
         # switch to recaptcha audio control frame
         time.sleep(5)
