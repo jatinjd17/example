@@ -180,22 +180,25 @@ def RunScript():
         bot.save_screenshot('2.png')
     
         # switch to recaptcha audio control frame
-        time.sleep(5)
+        time.sleep(10)
         bot.switch_to.default_content()
         frames = bot.find_elements(By.TAG_NAME, "iframe")
         bot.switch_to.frame(recaptcha_challenge_frame)
     
         # click on audio challenge
-        time.sleep(4)
+        time.sleep(8)
+        bot.save_screenshot('3.png')
         bot.find_element(By.ID, "recaptcha-audio-button").click()
     
         # switch to recaptcha audio challenge frame
         bot.switch_to.default_content()
         frames = bot.find_elements(By.TAG_NAME, "iframe")
         bot.switch_to.frame(recaptcha_challenge_frame)
+     
     
         # get the mp3 audio file
         time.sleep(5)
+        bot.save_screenshot('4.png')
         src = bot.find_element(By.ID, "audio-source").get_attribute("src")
         print(f"[INFO] Audio src: {src}")
     
