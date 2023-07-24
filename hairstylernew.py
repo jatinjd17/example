@@ -134,7 +134,7 @@ def RunScript():
     all_iframes = bot.find_elements(By.TAG_NAME, "iframe")
     if len(all_iframes) > 0:
         print("Ad Found\n")
-        browser.execute_script("""
+        bot.execute_script("""
             var elems = document.getElementsByTagName("iframe"); 
             for(var i = 0, max = elems.length; i < max; i++)
                  {
