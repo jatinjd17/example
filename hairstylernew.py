@@ -46,7 +46,7 @@ def RunScript():
 
     # options.headless = True
     options.add_argument('--headless')
-    # options.add_argument('--window-size=1920,1080')
+    options.add_argument('--window-size=1920,1080')
     options.add_argument('--disable-popup-blocking')
     # firstname = (names.get_first_name(gender='male')).lower()
     # lastname = (names.get_last_name()).lower()
