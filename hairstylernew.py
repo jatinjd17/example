@@ -181,8 +181,10 @@ def RunScript():
     
         # switch to recaptcha audio control frame
         time.sleep(10)
+        bot.save_screenshot('22.png')
         bot.switch_to.default_content()
         frames = bot.find_elements(By.TAG_NAME, "iframe")
+        bot.save_screenshot('222.png')
         bot.switch_to.frame(recaptcha_challenge_frame)
     
         # click on audio challenge
