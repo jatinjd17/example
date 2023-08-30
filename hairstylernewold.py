@@ -120,42 +120,209 @@ def RunScript():
 
     bot.find_element(By.XPATH, '//*[@id="user_password_confirmation"]').send_keys("Jatin@123")
     element2 = bot.find_element(By.XPATH, '//*[@id="user_password_confirmation"]')
+######################################START#############################
+#     desired_y = (element2.size['height'] / 2) + element2.location['y']
+#     window_h = bot.execute_script('return window.innerHeight')
+#     window_y = bot.execute_script('return window.pageYOffset')
+#     current_y = (window_h / 2) + window_y
+#     scroll_y_by2 = desired_y - current_y
 
-    desired_y = (element2.size['height'] / 2) + element2.location['y']
-    window_h = bot.execute_script('return window.innerHeight')
-    window_y = bot.execute_script('return window.pageYOffset')
-    current_y = (window_h / 2) + window_y
-    scroll_y_by2 = desired_y - current_y
+#         # print(scroll_y_by2)
 
-        # print(scroll_y_by2)
+#     bot.execute_script("window.scrollBy(0, arguments[0]);", scroll_y_by2)
 
-    bot.execute_script("window.scrollBy(0, arguments[0]);", scroll_y_by2)
+#     all_iframes = bot.find_elements(By.TAG_NAME, "iframe")
+#     if len(all_iframes) > 0:
+#         print("Ad Found\n")
+#         bot.execute_script("""
+#             var elems = document.getElementsByTagName("iframe"); 
+#             for(var i = 0, max = elems.length; i < max; i++)
+#                  {
+#                      elems[i].hidden=true;
+#                  }
+#                           """)
+#         print('Total Ads: ' + str(len(all_iframes)))
+#     else:
+#         print('No frames found')
 
-    all_iframes = bot.find_elements(By.TAG_NAME, "iframe")
-    if len(all_iframes) > 0:
-        print("Ad Found\n")
-        bot.execute_script("""
-            var elems = document.getElementsByTagName("iframe"); 
-            for(var i = 0, max = elems.length; i < max; i++)
-                 {
-                     elems[i].hidden=true;
-                 }
-                          """)
-        print('Total Ads: ' + str(len(all_iframes)))
-    else:
-        print('No frames found')
+#     # '//*[@id="last_name"]'
 
-    # '//*[@id="last_name"]'
+#     # '//*[@id="email"]'
 
-    # '//*[@id="email"]'
+#     # WebDriverWait(bot, 10).until(EC.frame_to_be_available_and_switch_to_it((By.CSS_SELECTOR,"iframe[title^='reCAPTCHA']")))
 
-    # WebDriverWait(bot, 10).until(EC.frame_to_be_available_and_switch_to_it((By.CSS_SELECTOR,"iframe[title^='reCAPTCHA']")))
+#     # # WebDriverWait(bot, 10).until(EC.frame_to_be_available_and_switch_to_it((By.CSS_SELECTOR,"iframe[name^='google_esf'][src^='https://googleads.g.doubleclick.net/pagead/html/r20230308/r20190131/zrt_lookup.html']")))
+#     # WebDriverWait(bot, 10).until(EC.element_to_be_clickable((By.XPATH, "//span[@id='recaptcha-anchor']"))).click()
 
-    # # WebDriverWait(bot, 10).until(EC.frame_to_be_available_and_switch_to_it((By.CSS_SELECTOR,"iframe[name^='google_esf'][src^='https://googleads.g.doubleclick.net/pagead/html/r20230308/r20190131/zrt_lookup.html']")))
-    # WebDriverWait(bot, 10).until(EC.element_to_be_clickable((By.XPATH, "//span[@id='recaptcha-anchor']"))).click()
+#     try:
+#         bot.save_screenshot('1.png')
+#         time.sleep(2)
+#         frames = bot.find_elements(By.TAG_NAME, "iframe")
+#         recaptcha_control_frame = None
+#         recaptcha_challenge_frame = None
+#         for index, frame in enumerate(frames):
+#             if re.search('reCAPTCHA', frame.get_attribute("title")):
+#                 recaptcha_control_frame = frame
+                
+#             if re.search('recaptcha challenge', frame.get_attribute("title")):
+#                 recaptcha_challenge_frame = frame
+#         if not (recaptcha_control_frame and recaptcha_challenge_frame):
+#             print("[ERR] Unable to find recaptcha. Abort solver.")
+#             sys.exit()
+#         # switch to recaptcha frame
+#         time.sleep(5)
+#         bot.save_screenshot('12.png')
+#         frames = bot.find_elements(By.TAG_NAME, "iframe")
+#         bot.switch_to.frame(recaptcha_control_frame)
+#         # click on checkbox to activate recaptcha
+#         bot.save_screenshot('122.png')
+#         bot.find_element(By.CLASS_NAME, "recaptcha-checkbox-border").click()
+#         bot.save_screenshot('2.png')
+#         time.sleep(2)
+#         bot.save_screenshot('2122.png')
+    
+#         # switch to recaptcha audio control frame
+#         time.sleep(10)
+#         bot.save_screenshot('22.png')
+#         bot.switch_to.default_content()
+#         frames = bot.find_elements(By.TAG_NAME, "iframe")
+#         bot.save_screenshot('222.png')
+#         bot.switch_to.frame(recaptcha_challenge_frame)
+    
+#         # click on audio challenge
+#         time.sleep(8)
+#         bot.save_screenshot('3.png')
+#         bot.find_element(By.ID, "recaptcha-audio-button").click()
+    
+#         # switch to recaptcha audio challenge frame
+#         bot.switch_to.default_content()
+#         frames = bot.find_elements(By.TAG_NAME, "iframe")
+#         bot.switch_to.frame(recaptcha_challenge_frame)
+     
+    
+#         # get the mp3 audio file
+#         time.sleep(5)
+#         bot.save_screenshot('4.png')
+#         src = bot.find_element(By.ID, "audio-source").get_attribute("src")
+#         print(f"[INFO] Audio src: {src}")
+    
+#         path_to_mp3 = os.path.normpath(os.path.join(os.getcwd(), "sample.mp3"))
+#         path_to_wav = os.path.normpath(os.path.join(os.getcwd(), "sample.wav"))
+    
+#         # download the mp3 audio file from the source
+#         urllib.request.urlretrieve(src, path_to_mp3)
+#         urllib.request.urlretrieve(src, path_to_wav)
+#     except Exception as e:
+#         print(e)
+#         # if ip is blocked.. renew tor ip
+#         print("[INFO] IP address has been blocked for recaptcha.")
+#         # if activate_tor:
+#         #     renew_ip(CONTROL_PORT)
+#         #sys.exit()   
+#         pass 
 
+#     # load downloaded mp3 audio file as .wav
+#     try:
+#         sound = pydub.AudioSegment.from_mp3(path_to_mp3)
+#         sound.export(path_to_wav, format="wav")
+#         sample_audio = sr.AudioFile(path_to_wav)
+#     except Exception:
+#         pass
+#         # sys.exit(
+#         #     "[ERR] Please run program as administrator or download ffmpeg manually, "
+#         #     "https://blog.gregzaal.com/how-to-install-ffmpeg-on-windows/"
+#         # )
+
+#     # translate audio to text with google voice recognition
+#     try:
+#         time.sleep(5)
+#         r = sr.Recognizer()
+#         with sample_audio as source:
+#             audio = r.record(source)
+#         key = r.recognize_google(audio,language='en-IN')
+#         print(f"[INFO] Recaptcha Passcode: {key}")
+
+#         # key in results and submit
+#         time.sleep(5)
+#         bot.find_element(By.ID, "audio-response").send_keys(key.lower())
+#         bot.find_element(By.ID, "audio-response").send_keys(Keys.ENTER)
+#     except:
+#         pass
+#     # time.sleep(5)
+#     # bot.switch_to.default_content()
+#     # time.sleep(5)
+#     # bot.find_element(By.ID, "recaptcha-demo-submit").click()
+#     # time.sleep(300)
+#     # if (tor_process):
+#     #     tor_process.kill()
+
+
+#     time.sleep(5)
+
+
+#     bot.switch_to.default_content()
+
+
+#     time.sleep(1)
+
+#     bot.find_element(By.XPATH, '//*[@id="submitBtn"]').click()
+
+#     time.sleep(5)
+
+#     aa = bot.find_element(By.CSS_SELECTOR, 'body > div.container > div:nth-child(4) > div > h1')
+
+#     print(aa.text)
+
+
+#     time.sleep(1)
+
+#     bot.switch_to.window(bot.window_handles[0])
+
+
+#     time.sleep(1)
+
+
+
+#     bot.get("https://email-fake.com/")
+
+
+#     time.sleep(5)
+
+#     # bot.execute_script("document.body.style.zoom='45%'")
+
+#     html = bot.find_element(By.TAG_NAME, 'html')
+#     html.send_keys(Keys.END)
+
+#     time.sleep(10)
+
+#     bot.find_element(By.CSS_SELECTOR, 'div.fem.mess_bodiyy > p + p + p > a').click()
+#     time.sleep(5)
+#     bot.switch_to.window(bot.window_handles[1])
+#     get_url = bot.current_url
+
+#     print("The current url is:"+str(get_url))
+#     time.sleep(2)
+#     #bot.switch_to.window(bot.window_handles[2])
+#     #get_url = bot.current_url
+
+#     #print("The current url is:"+str(get_url))
+
+
+    
+# # 'Welcome to TheHairStyler.com. You can confirm your account email through the link below:'
+
+    
+
+    
+
+
+
+#     #time.sleep(1)
+#     print('done')
+#     bot.quit()
+
+#######################################STOP###############################
     try:
-        bot.save_screenshot('1.png')
         time.sleep(2)
         frames = bot.find_elements(By.TAG_NAME, "iframe")
         recaptcha_control_frame = None
@@ -163,7 +330,7 @@ def RunScript():
         for index, frame in enumerate(frames):
             if re.search('reCAPTCHA', frame.get_attribute("title")):
                 recaptcha_control_frame = frame
-                
+
             if re.search('recaptcha challenge', frame.get_attribute("title")):
                 recaptcha_challenge_frame = frame
         if not (recaptcha_control_frame and recaptcha_challenge_frame):
@@ -171,44 +338,34 @@ def RunScript():
             sys.exit()
         # switch to recaptcha frame
         time.sleep(5)
-        bot.save_screenshot('12.png')
         frames = bot.find_elements(By.TAG_NAME, "iframe")
         bot.switch_to.frame(recaptcha_control_frame)
         # click on checkbox to activate recaptcha
-        bot.save_screenshot('122.png')
         bot.find_element(By.CLASS_NAME, "recaptcha-checkbox-border").click()
-        bot.save_screenshot('2.png')
-        time.sleep(2)
-        bot.save_screenshot('2122.png')
-    
+
         # switch to recaptcha audio control frame
-        time.sleep(10)
-        bot.save_screenshot('22.png')
+        time.sleep(5)
         bot.switch_to.default_content()
         frames = bot.find_elements(By.TAG_NAME, "iframe")
-        bot.save_screenshot('222.png')
         bot.switch_to.frame(recaptcha_challenge_frame)
-    
+
         # click on audio challenge
-        time.sleep(8)
-        bot.save_screenshot('3.png')
+        time.sleep(4)
         bot.find_element(By.ID, "recaptcha-audio-button").click()
-    
+
         # switch to recaptcha audio challenge frame
         bot.switch_to.default_content()
         frames = bot.find_elements(By.TAG_NAME, "iframe")
         bot.switch_to.frame(recaptcha_challenge_frame)
-     
-    
+
         # get the mp3 audio file
         time.sleep(5)
-        bot.save_screenshot('4.png')
         src = bot.find_element(By.ID, "audio-source").get_attribute("src")
         print(f"[INFO] Audio src: {src}")
-    
+
         path_to_mp3 = os.path.normpath(os.path.join(os.getcwd(), "sample.mp3"))
         path_to_wav = os.path.normpath(os.path.join(os.getcwd(), "sample.wav"))
-    
+
         # download the mp3 audio file from the source
         urllib.request.urlretrieve(src, path_to_mp3)
         urllib.request.urlretrieve(src, path_to_wav)
@@ -218,8 +375,8 @@ def RunScript():
         print("[INFO] IP address has been blocked for recaptcha.")
         # if activate_tor:
         #     renew_ip(CONTROL_PORT)
-        #sys.exit()   
-        pass 
+        #sys.exit()
+        pass
 
     # load downloaded mp3 audio file as .wav
     try:
@@ -302,24 +459,26 @@ def RunScript():
 
     print("The current url is:"+str(get_url))
     time.sleep(2)
-    #bot.switch_to.window(bot.window_handles[2])
-    #get_url = bot.current_url
+    bot.switch_to.window(bot.window_handles[2])
+    get_url = bot.current_url
 
-    #print("The current url is:"+str(get_url))
+    print("The current url is:"+str(get_url))
 
 
-    
+
 # 'Welcome to TheHairStyler.com. You can confirm your account email through the link below:'
 
-    
-
-    
 
 
 
-    #time.sleep(1)
+
+
+
+    time.sleep(1)
     print('done')
     bot.quit()
+
+
 
 
 if __name__ == "__main__":
