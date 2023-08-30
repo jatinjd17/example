@@ -17,7 +17,8 @@ import sys
 
 
 print("INIT")
-chromedriver_path = "/chromedriver"
+# chromedriver_path = "/chromedriver"
+service = Service(executable_path='/usr/local/share/chromedriver')
 options = Options()
 
 # options = webdriver.ChromeOptions()
@@ -42,7 +43,7 @@ options.add_argument(f'user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) Appl
 # options.add_argument('--window-size=1920,1080')
 options.add_argument("--headless")
 time.sleep(2)
-bot = webdriver.Chrome(executable_path='/usr/local/share/chromedriver',options=options)
+bot = webdriver.Chrome(service=service, options=options)
 
 def RunScript():
     # bot = webdriver.Chrome(options=option)
