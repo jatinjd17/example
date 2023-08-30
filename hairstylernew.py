@@ -18,33 +18,33 @@ import sys
 
 print("INIT")
 chromedriver_path = "/chromedriver.exe"
-options = Options()
+option = Options()
 
 # options = webdriver.ChromeOptions()
 # ua = UserAgent()
 # userAgent = ua.random
 # print(userAgent)
 
-options.add_argument('--window-size=1920,1080')
-options.add_argument("--disable-blink-features=AutomationControlled") 
+option.add_argument('--window-size=1920,1080')
+option.add_argument("--disable-blink-features=AutomationControlled") 
 
  
 # Exclude the collection of enable-automation switches 
-options.add_experimental_option("excludeSwitches", ["enable-automation"]) 
+option.add_experimental_option("excludeSwitches", ["enable-automation"]) 
  
 # Turn-off userAutomationExtension 
-options.add_experimental_option("useAutomationExtension", False) 
-options.add_argument(f'user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36')
+option.add_experimental_option("useAutomationExtension", False) 
+option.add_argument(f'user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36')
 # # options.add_experimental_option('excludeSwitches', ['enable-logging'])
 # options.add_argument("--log-level=3")
 # options.add_argument(r"--user-data-dir=C:\Users\jatin\AppData\Local\Google\Chrome\User Data") #e.g. C:\Users\You\AppData\Local\Google\Chrome\User Data
 # options.add_argument('profile-directory=Default')
 # options.add_argument('--window-size=1920,1080')
-options.add_argument("--headless")
+option.add_argument("--headless")
 time.sleep(2)
 
 def RunScript():
-    bot = webdriver.Chrome(executable_path=chromedriver_path, options=options)
+    bot = webdriver.Chrome(options=option)
 
     # bot.get('https://www.thehairstyler.com/signup')
 
