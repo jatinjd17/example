@@ -93,7 +93,7 @@ def RunScript():
 
     try:
 
-        bot.find_element(By.XPATH, '/html/body/div[4]/div[2]/div[1]/div[2]/div[2]/button[1]').click()
+        bot.find_element(By.XPATH, '/html/body/div[5]/div[2]/div[1]/div[2]/div[2]/button[1]').click()
     except:
         pass
 
