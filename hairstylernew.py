@@ -8,6 +8,7 @@ from selenium.webdriver import ActionChains
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
 import urllib
 import pydub
 import speech_recognition as sr
@@ -16,7 +17,9 @@ import sys
 
 
 print("INIT")
-options = webdriver.ChromeOptions()
+options = Options()
+
+# options = webdriver.ChromeOptions()
 # ua = UserAgent()
 # userAgent = ua.random
 # print(userAgent)
