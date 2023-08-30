@@ -17,7 +17,7 @@ import sys
 
 
 print("INIT")
-chromedriver_path = "/chromedriver.exe"
+chromedriver_path = "/chromedriver"
 option = Options()
 
 # options = webdriver.ChromeOptions()
