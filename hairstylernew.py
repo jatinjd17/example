@@ -42,7 +42,7 @@ options.add_argument("--headless")
 time.sleep(2)
 
 def RunScript():
-    bot = webdriver.Chrome(chrome_options=options)
+    bot = webdriver.Chrome(options=options)
 
     # bot.get('https://www.thehairstyler.com/signup')
 
