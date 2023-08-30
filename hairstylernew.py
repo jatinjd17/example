@@ -20,7 +20,7 @@ import sys
 print("INIT")
 # chromedriver_path = "/chromedriver"
 service = Service(executable_path='/usr/local/share/chromedriver')
-options = Options()
+options = webdriver.ChromeOptions()
 
 # options = webdriver.ChromeOptions()
 # ua = UserAgent()
