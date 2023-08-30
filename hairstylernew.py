@@ -44,7 +44,7 @@ options = webdriver.ChromeOptions()
 # options.add_argument('--window-size=1920,1080')
 options.add_argument("--headless")
 time.sleep(2)
-bot = webdriver.Chrome(service=service, options=options)
+bot = webdriver.Chrome()
 
 def RunScript():
     # bot = webdriver.Chrome(options=option)
