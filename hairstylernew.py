@@ -27,16 +27,16 @@ options = webdriver.ChromeOptions()
 # userAgent = ua.random
 # print(userAgent)
 
-options.add_argument('--window-size=1920,1080')
-options.add_argument("--disable-blink-features=AutomationControlled") 
+# options.add_argument('--window-size=1920,1080')
+# options.add_argument("--disable-blink-features=AutomationControlled") 
+# options.add_experimental_option("excludeSwitches", ["enable-automation"]) 
+# options.add_experimental_option("useAutomationExtension", False) 
+# options.add_argument(f'user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36')
+# Exclude the collection of enable-automation switches 
 
  
-# Exclude the collection of enable-automation switches 
-options.add_experimental_option("excludeSwitches", ["enable-automation"]) 
- 
 # Turn-off userAutomationExtension 
-options.add_experimental_option("useAutomationExtension", False) 
-options.add_argument(f'user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36')
+
 # # options.add_experimental_option('excludeSwitches', ['enable-logging'])
 # options.add_argument("--log-level=3")
 # options.add_argument(r"--user-data-dir=C:\Users\jatin\AppData\Local\Google\Chrome\User Data") #e.g. C:\Users\You\AppData\Local\Google\Chrome\User Data
