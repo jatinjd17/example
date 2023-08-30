@@ -19,7 +19,7 @@ import sys
 
 print("INIT")
 # chromedriver_path = "/chromedriver"
-service = Service(executable_path='/usr/local/share/chromedriver')
+# service = Service(executable_path='/usr/local/share/chromedriver')
 options = webdriver.ChromeOptions()
 
 # options = webdriver.ChromeOptions()
@@ -27,11 +27,11 @@ options = webdriver.ChromeOptions()
 # userAgent = ua.random
 # print(userAgent)
 
-# options.add_argument('--window-size=1920,1080')
-# options.add_argument("--disable-blink-features=AutomationControlled") 
-# options.add_experimental_option("excludeSwitches", ["enable-automation"]) 
-# options.add_experimental_option("useAutomationExtension", False) 
-# options.add_argument(f'user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36')
+options.add_argument('--window-size=1920,1080')
+options.add_argument("--disable-blink-features=AutomationControlled") 
+options.add_experimental_option("excludeSwitches", ["enable-automation"]) 
+options.add_experimental_option("useAutomationExtension", False) 
+options.add_argument(f'user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36')
 # Exclude the collection of enable-automation switches 
 
  
@@ -44,7 +44,7 @@ options = webdriver.ChromeOptions()
 # options.add_argument('--window-size=1920,1080')
 options.add_argument("--headless")
 time.sleep(2)
-bot = webdriver.Chrome()
+bot = webdriver.Chrome(options=option)
 
 def RunScript():
     # bot = webdriver.Chrome(options=option)
