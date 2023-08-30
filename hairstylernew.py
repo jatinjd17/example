@@ -42,7 +42,7 @@ option.add_argument(f'user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) Apple
 # options.add_argument('--window-size=1920,1080')
 option.add_argument("--headless")
 time.sleep(2)
-bot = webdriver.Chrome('chromedriver',options=option)
+bot = webdriver.Chrome('./chromedriver',options=option)
 
 def RunScript():
     # bot = webdriver.Chrome(options=option)
