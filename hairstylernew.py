@@ -17,12 +17,14 @@ import sys
 
 
 print("INIT")
+chromedriver_path = "/chromedriver.exe"
 options = Options()
 
 # options = webdriver.ChromeOptions()
 # ua = UserAgent()
 # userAgent = ua.random
 # print(userAgent)
+
 options.add_argument('--window-size=1920,1080')
 options.add_argument("--disable-blink-features=AutomationControlled") 
 
@@ -42,7 +44,7 @@ options.add_argument("--headless")
 time.sleep(2)
 
 def RunScript():
-    bot = webdriver.Chrome(options=options)
+    bot = webdriver.Chrome(executable_path=chromedriver_path, options=options)
 
     # bot.get('https://www.thehairstyler.com/signup')
 
