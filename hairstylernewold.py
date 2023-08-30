@@ -95,7 +95,7 @@ def RunScript():
          
 
         # bot.find_element(By.XPATH, '/html/body/div[5]/div[2]/div[1]/div[2]/div[2]/button[1]').click()
-        WebDriverWait(bot,10).until(EC.element_to_be_clickable(By.XPATH, "/html/body/div[5]/div[2]/div[1]/div[2]/div[2]/button[1]/div")).click()
+        WebDriverWait(bot,20).until(EC.element_to_be_clickable(By.XPATH, "/html/body/div[5]/div[2]/div[1]/div[2]/div[2]/button[1]/div")).click()
     except:
         pass
 
