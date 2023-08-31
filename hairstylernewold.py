@@ -465,6 +465,8 @@ def RunScript():
     get_url = bot.current_url
 
     print("The current url is:"+str(get_url))
+    time.sleep(5)
+    bot.refresh()
 
 
 
@@ -476,7 +478,7 @@ def RunScript():
 
 
 
-    time.sleep(1)
+    time.sleep(5)
     print('done')
     bot.quit()
 
