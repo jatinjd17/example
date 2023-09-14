@@ -40,9 +40,14 @@ def RunScript():
     bot.get("https://google.com/")
     bot.get("https://chrome.google.com/webstore/detail/grammarly-grammar-checker/kbfnbcaeplbcioakkpcpgfkobkghlhen?utm_source=lt-homepage")
     time.sleep(5)
+    num2 = random.randint(10, 100)
+    bot.save_screenshot(f'yyyyy{num2}.png')
+
 
     WebDriverWait(bot,10).until(EC.element_to_be_clickable((By.XPATH, "//div[contains(text(),'Add to Chrome')]"))).click()
     #WebDriverWait(bot,10).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[3]/div[2]/div/div/div[2]/div[2]/div/div/div/div'))).click()
+    num2 = random.randint(10, 100)
+    bot.save_screenshot(f'zzzzz{num2}.png')
 
     time.sleep(5)
 
@@ -59,7 +64,7 @@ def RunScript():
     # time.sleep(4)
     
 
-    time.sleep(35)
+    time.sleep(10)
     num2 = random.randint(10, 100)
     bot.save_screenshot(f'1jj12{num2}.png')
     get_url = bot.current_url
