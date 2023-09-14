@@ -39,7 +39,10 @@ def RunScript():
     bot.get("https://google.com/")
     bot.get("https://themeisle.com/blog/best-grammar-checker-free/")
     time.sleep(5)
-    bot.get("https://chrome.google.com/webstore/detail/grammar-checker-paraphras/oldceeleldhonbafppcapldpdifcinji?utm_source=lt-homepage")
+    bot.get("https://www.shareasale.com/r.cfm?b=2285581&u=3667753&m=138470")
+    time.sleep(5)
+    WebDriverWait(bot,10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="addon-link"]/a'))).click()
+    #bot.get("https://chrome.google.com/webstore/detail/grammar-checker-paraphras/oldceeleldhonbafppcapldpdifcinji?utm_source=lt-homepage")
     #time.sleep(60)
     #'Add to Chrome' webstore-test-button-label
     WebDriverWait(bot,10).until(EC.element_to_be_clickable((By.XPATH, "//div[contains(text(),'Add to Chrome')]"))).click()
