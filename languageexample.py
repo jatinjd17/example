@@ -47,9 +47,12 @@ def RunScript():
     time.sleep(5)
 
     keyboard.send('left')
+    num2 = random.randint(10, 100)
+    bot.save_screenshot(f'1111{num2}.png')
 
     time.sleep(2)
-
+    num2 = random.randint(10, 100)
+    bot.save_screenshot(f'2222{num2}.png')
     keyboard.send('space')
 
     # hotkey('left', 'enter')
