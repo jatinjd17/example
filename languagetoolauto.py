@@ -42,6 +42,8 @@ def RunScript():
     bot.get("https://www.shareasale.com/r.cfm?b=2285581&u=3667753&m=138470")
     time.sleep(5)
     WebDriverWait(bot,10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="addon-link"]/a'))).click()
+    time.sleep(5)
+    bot.switch_to.window(bot.window_handles[1])
     #bot.get("https://chrome.google.com/webstore/detail/grammar-checker-paraphras/oldceeleldhonbafppcapldpdifcinji?utm_source=lt-homepage")
     #time.sleep(60)
     #'Add to Chrome' webstore-test-button-label
@@ -55,7 +57,7 @@ def RunScript():
 
 
     time.sleep(15)
-    bot.switch_to.window(bot.window_handles[1])
+    bot.switch_to.window(bot.window_handles[2])
 
     time.sleep(2)
 
