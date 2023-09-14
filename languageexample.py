@@ -55,8 +55,8 @@ def RunScript():
     # time.sleep(4)
     
 
-    time.sleep(25)
-    bot.save_screenshot('1jj.png')
+    time.sleep(35)
+    bot.save_screenshot('1jj12.png')
     get_url = bot.current_url
     print("The current url is33333:"+str(get_url))
     bot.switch_to.window(bot.window_handles[1])
