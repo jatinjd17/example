@@ -9,7 +9,6 @@ from selenium.webdriver import ActionChains
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from pyautogui import hotkey
 import undetected_chromedriver as uc
 def RunScript():
     # bot = webdriver.Chrome(chrome_options=options)
