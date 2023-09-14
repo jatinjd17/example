@@ -2,6 +2,7 @@ import time, os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import names
+import random
 from itertools import islice
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver import ActionChains
@@ -49,14 +50,15 @@ def RunScript():
 
     time.sleep(2)
 
-    keyboard.send('enter')
+    keyboard.send('space')
 
     # hotkey('left', 'enter')
     # time.sleep(4)
     
 
     time.sleep(35)
-    bot.save_screenshot('1jj12.png')
+    num2 = random.randint(10, 100)
+    bot.save_screenshot(f'1jj12{num2}.png')
     get_url = bot.current_url
     print("The current url is33333:"+str(get_url))
     bot.switch_to.window(bot.window_handles[1])
