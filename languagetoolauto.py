@@ -54,7 +54,11 @@ def RunScript():
 
     time.sleep(5)
 
-    keyboard.send('left, enter')
+    keyboard.send('left')
+
+    time.sleep(2)
+
+    keyboard.send('enter')
 
     # hotkey('left', 'enter')
     # time.sleep(4)
