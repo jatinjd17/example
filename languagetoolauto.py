@@ -1,5 +1,4 @@
 import time, os
-os.environ['DISPLAY'] = ':0'
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import names
