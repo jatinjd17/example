@@ -19,6 +19,7 @@ def RunScript():
     # options.add_argument('--headless')
     options.add_argument('--window-size=1920,1080')
     options.add_argument('--disable-popup-blocking')
+    options.add_argument('--load-extension=C:/Users/jatin/OneDrive/Desktop/Langua/Grammar')
     # options.add_extension('C:\Users\Momentum_v0.92.2.crx')
     # firstname = (names.get_first_name(gender='male')).lower()
     # lastname = (names.get_last_name()).lower()
@@ -39,32 +40,35 @@ def RunScript():
     bot.get("https://google.com/")
     bot.get("https://themeisle.com/blog/best-grammar-checker-free/")
     time.sleep(5)
-    # bot.get("https://languagetool.org/")
-    bot.get("https://www.shareasale.com/r.cfm?b=2285581&u=3667753&m=138470")
-    time.sleep(5)
-    WebDriverWait(bot,10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="addon-link"]/a'))).click()
-    time.sleep(5)
-    bot.switch_to.window(bot.window_handles[1])
-    #bot.get("https://chrome.google.com/webstore/detail/grammar-checker-paraphras/oldceeleldhonbafppcapldpdifcinji?utm_source=lt-homepage")
-    #time.sleep(60)
-    #'Add to Chrome' webstore-test-button-label
-    WebDriverWait(bot,10).until(EC.element_to_be_clickable((By.XPATH, "//div[contains(text(),'Add to Chrome')]"))).click()
+    bot.get("https://languagetool.org/")
+    # bot.get("https://www.shareasale.com/r.cfm?b=2285581&u=3667753&m=138470")
+    # time.sleep(5)
+    # WebDriverWait(bot,10).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="addon-link"]/a'))).click()
+    # time.sleep(5)
+    # bot.switch_to.window(bot.window_handles[1])
+    # #bot.get("https://chrome.google.com/webstore/detail/grammar-checker-paraphras/oldceeleldhonbafppcapldpdifcinji?utm_source=lt-homepage")
+    # #time.sleep(60)
+    # #'Add to Chrome' webstore-test-button-label
+    # WebDriverWait(bot,10).until(EC.element_to_be_clickable((By.XPATH, "//div[contains(text(),'Add to Chrome')]"))).click()
     #WebDriverWait(bot,10).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[3]/div[2]/div/div/div[2]/div[2]/div/div/div/div'))).click()
 
-    time.sleep(5)
+    # time.sleep(5)
 
-    keyboard.send('left')
+    # keyboard.send('left')
 
-    time.sleep(2)
+    # time.sleep(2)
 
-    keyboard.send('enter')
+    # keyboard.send('enter')
 
-    # hotkey('left', 'enter')
-    # time.sleep(4)
+    # # hotkey('left', 'enter')
+    # # time.sleep(4)
 
+
+    # time.sleep(15)
+    # bot.switch_to.window(bot.window_handles[2])
 
     time.sleep(15)
-    bot.switch_to.window(bot.window_handles[2])
+    bot.switch_to.window(bot.window_handles[1])
 
     time.sleep(2)
 
