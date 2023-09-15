@@ -11,6 +11,10 @@ from requests import get
 import undetected_chromedriver as uc
 
 
+ip = get('https://api.ipify.org').content.decode('utf8')
+print(ip)
+
+
 istrigger = get('https://languagetoolserververcel.vercel.app/').content.decode('utf8')
 print(istrigger)
 
