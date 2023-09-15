@@ -7,12 +7,20 @@ from selenium.webdriver import ActionChains
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from requests import get
+from requests import get, post
+import json
 import undetected_chromedriver as uc
 
 
-ip = get('https://api.ipify.org').content.decode('utf8')
-print(ip)
+ipp = get('https://api.ipify.org').content.decode('utf8')
+print(ipp)
+url = 'https://languagetoolserververcel.vercel.app/verifyip'
+myobj = {'ip': ipp}
+headers = {'content-type': 'application/json'}
+
+x = post(url, data=json.dumps(myobj), headers=headers)
+
+ipisusedornot = x.text
 
 
 istrigger = get('https://languagetoolserververcel.vercel.app/').content.decode('utf8')
@@ -76,8 +84,9 @@ def secondthing():
     time.sleep(25)
     bot.quit()
 
-if istrigger == 'nolinktrigger':    
-    firstthing()
-elif istrigger == 'trigger':
+if istrigger == 'nolinktrigger' and ipisusedornot == 'ip-never-used':    
     secondthing()
-    
+elif istrigger == 'trigger' and ipisusedornot == 'ip-never-used':
+    firstthing()   
+else:
+    print('IP already used. Soo not triggering any def')
