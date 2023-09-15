@@ -24,7 +24,7 @@ def RunScript():
     # lastname = (names.get_last_name()).lower()
     # email = firstname+'_'+lastname+str(random.randrange(400,2000))+'@outlook.com'
     # print(email)
-    bot = uc.Chrome(options=options)
+    bot = uc.Chrome(version_main=116, options=options)
 
     # bot.get('https://www.thehairstyler.com/signup')
 
