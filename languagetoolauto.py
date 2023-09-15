@@ -1,21 +1,19 @@
 import time, os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import names
 from itertools import islice
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver import ActionChains
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import keyboard
 import undetected_chromedriver as uc
 def RunScript():
     # bot = webdriver.Chrome(chrome_options=options)
     options = webdriver.ChromeOptions()
     # options = webdriver.FirefoxOptions()
 
-    options.headless = True
+    # options.headless = True
     # options.add_argument('--headless')
     options.add_argument('--window-size=1920,1080')
     options.add_argument('--disable-popup-blocking')
@@ -72,11 +70,22 @@ def RunScript():
 
     time.sleep(2)
 
-    WebDriverWait(bot,10).until(EC.element_to_be_clickable((By.XPATH, "//button[contains(text(),'Okay, got it')]"))).click()
+    try:
+
+        WebDriverWait(bot,10).until(EC.element_to_be_clickable((By.XPATH, "//button[contains(text(),'Okay, got it')]"))).click()
+    except:
+        pass
     time.sleep(2)
-    WebDriverWait(bot,10).until(EC.element_to_be_clickable((By.XPATH, "//button[contains(text(),'Start using LanguageTool')]"))).click()
+
+    try:
+        WebDriverWait(bot,10).until(EC.element_to_be_clickable((By.XPATH, "//button[contains(text(),'Start using LanguageTool')]"))).click()
+    except:
+        pass
     time.sleep(2)
-    WebDriverWait(bot,10).until(EC.element_to_be_clickable((By.XPATH, "//button[contains(text(),'Continue')]"))).click()
+    try:    
+        WebDriverWait(bot,10).until(EC.element_to_be_clickable((By.XPATH, "//button[contains(text(),'Continue')]"))).click()
+    except:
+        pass
     time.sleep(3)
     get_url = bot.current_url
     print("The current url is33333:"+str(get_url))
