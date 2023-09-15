@@ -15,8 +15,8 @@ def RunScript():
     options = webdriver.ChromeOptions()
     # options = webdriver.FirefoxOptions()
 
-    options.headless = True
-    # options.add_argument('--headless')
+    # options.headless = True
+    options.add_argument('--headless')
     options.add_argument('--window-size=1920,1080')
     options.add_argument('--disable-popup-blocking')
     # options.add_extension('C:\Users\Momentum_v0.92.2.crx')
