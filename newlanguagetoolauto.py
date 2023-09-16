@@ -66,7 +66,7 @@ def firstthing():
     WebDriverWait(bot,10).until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[3]/div[2]/div/textarea"))).send_keys('Show me the best Food')
     time.sleep(5)
     bot.quit()
-    urlll = f"https://api.telegram.org/bot{os.environ['TOKEN']}/sendMessage?chat_id={os.environ['CHATID']}&text=DONE...TRANSACTION!!!!"
+    urlll = f"https://api.telegram.org/bot6443525779:AAHX9z3y1378hxsIumH-RrlUXXRkzqBoA2Q/sendMessage?chat_id=881296632&text=DONE...TRANSACTION!!!!"
     p = get(urlll)
 
 def secondthing():
@@ -85,7 +85,7 @@ def secondthing():
     bot.get("https://www.shareasale.com/r.cfm?b=2285581&u=3667753&m=138470")
     time.sleep(25)
     bot.quit()
-    urlll = f"https://api.telegram.org/bot{os.environ['TOKEN']}/sendMessage?chat_id={os.environ['CHATID']}&text=DONE!!!!"
+    urlll = f"https://api.telegram.org/bot6443525779:AAHX9z3y1378hxsIumH-RrlUXXRkzqBoA2Q/sendMessage?chat_id=881296632&text=DONE!!!!"
     p = get(urlll)
 
 if istrigger == 'nolinktrigger' and ipisusedornot == 'ip-never-used':    
@@ -94,5 +94,5 @@ elif istrigger == 'trigger' and ipisusedornot == 'ip-never-used':
     firstthing()   
 else:
     print('IP already used. Soo not triggering any def')
-    urll = f"https://api.telegram.org/bot{os.environ['TOKEN']}/sendMessage?chat_id={os.environ['CHATID']}&text=IP_already_used._Soo_not_triggering_any_def!!!!"
+    urll = f"https://api.telegram.org/bot6443525779:AAHX9z3y1378hxsIumH-RrlUXXRkzqBoA2Q/sendMessage?chat_id=881296632&text=IP_already_used._Soo_not_triggering_any_def!!!!"
     p = get(urll)
