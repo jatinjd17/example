@@ -23,8 +23,8 @@ x = post(url, data=json.dumps(myobj), headers=headers)
 ipisusedornot = x.text
 
 
-istrigger = get('https://languagetoolserververcel.vercel.app/').content.decode('utf8')
-print(istrigger)
+# istrigger = get('https://languagetoolserververcel.vercel.app/').content.decode('utf8')
+# print(istrigger)
 
 def firstthing():
     print('1stttttt')
@@ -88,10 +88,17 @@ def secondthing():
     urlll = f"https://api.telegram.org/bot6443525779:AAHX9z3y1378hxsIumH-RrlUXXRkzqBoA2Q/sendMessage?chat_id=881296632&text=DONE!!!!"
     p = get(urlll)
 
-if istrigger == 'nolinktrigger' and ipisusedornot == 'ip-never-used':    
-    secondthing()
-elif istrigger == 'trigger' and ipisusedornot == 'ip-never-used':
-    firstthing()   
+# if istrigger == 'nolinktrigger' and ipisusedornot == 'ip-never-used':    
+#     secondthing()
+# elif istrigger == 'trigger' and ipisusedornot == 'ip-never-used':
+#     firstthing()   
+if ipisusedornot == 'ip-never-used':
+    istrigger = get('https://languagetoolserververcel.vercel.app/').content.decode('utf8')
+    print(istrigger)
+    if istrigger == 'nolinktrigger':
+        secondthing()
+    elif istrigger == 'trigger':
+        firstthing()
 else:
     print('IP already used. Soo not triggering any def')
     urll = f"https://api.telegram.org/bot6443525779:AAHX9z3y1378hxsIumH-RrlUXXRkzqBoA2Q/sendMessage?chat_id=881296632&text=IP_already_used._Soo_not_triggering_any_def!!!!"
