@@ -93,7 +93,7 @@ def secondthing():
 # elif istrigger == 'trigger' and ipisusedornot == 'ip-never-used':
 #     firstthing()   
 if ipisusedornot == 'ip-never-used':
-    istrigger = get('https://languagetoolserververcel.vercel.app/').content.decode('utf8')
+    istrigger = get('https://languagetoolserververcel.vercel.app/lengthtrigger').content.decode('utf8')
     print(istrigger)
     if istrigger == 'nolinktrigger':
         secondthing()
