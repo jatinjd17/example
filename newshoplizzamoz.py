@@ -11,7 +11,7 @@ from selenium.webdriver import ActionChains
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-# from requests import get, post
+from requests import get, post
 import json
 import time
 
