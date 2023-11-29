@@ -45,7 +45,7 @@ time.sleep(3)
 bot.switch_to.window(bot.window_handles[1])
 
 # Example: Open a website
-bot.get('https://www.shoplazza.com/pages/shareasale?utm_source=shareasale&utm_medium=affiliate&utm_campaign=shareasale_affiliate&utm_term=2176125&')
+bot.get('https://www.shareasale.com/r.cfm?b=2176125&u=3668989&m=132691')
 time.sleep(5)
 bot.save_screenshot("screenshot.png")
 
