@@ -190,6 +190,8 @@ def firstthing():
     
     # Close the browser
     bot.quit()
+    urlll = f"https://api.telegram.org/bot6443525779:AAHX9z3y1378hxsIumH-RrlUXXRkzqBoA2Q/sendMessage?chat_id=881296632&text=DONE...TRANSACTION!!!!"
+    p = get(urlll)
 
 
 def secondthing():
