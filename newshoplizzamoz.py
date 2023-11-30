@@ -61,18 +61,24 @@ def firstthing():
     
     # WebDriverWait(bot,100).until(EC.element_to_be_clickable((By.XPATH, '//*[@id="affiliate-register-container"]/div/div/div[2]/div/form[1]/div[2]/input'))).send_keys(email)
     bot.save_screenshot('1.png')
-    time.sleep(2)
+    time.sleep(6)
+
+    try:
+        WebDriverWait(bot,100).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[2]/div[4]/div/div/div/div/div/div/div[2]/div/form[1]/div[3]/div[1]/input'))).click()
+    except:
+        
+        
     
-    actions = ActionChains(bot)
-    # modal_dialog = bot.switch_to.active_element
-    for _ in range(12):
-        actions.send_keys('\ue004')  # '\ue004' is the Unicode representation of the Tab key
-    
-    # Press the Enter key
-    actions.send_keys(' ')   # '\ue007' is the Unicode representation of the Enter key
-    
-    # Perform the actions
-    actions.perform()
+        actions = ActionChains(bot)
+        # modal_dialog = bot.switch_to.active_element
+        for _ in range(12):
+            actions.send_keys('\ue004')  # '\ue004' is the Unicode representation of the Tab key
+        
+        # Press the Enter key
+        actions.send_keys(' ')   # '\ue007' is the Unicode representation of the Enter key
+        
+        # Perform the actions
+        actions.perform()
    
     time.sleep(2)
     bot.save_screenshot('12.png')
