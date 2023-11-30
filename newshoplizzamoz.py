@@ -125,13 +125,13 @@ def firstthing():
     # time.sleep(1)
     # '//*[@id="affiliate-register-container"]/div/div/div[2]/div/form[1]/div[5]/div/input'
     try:
-        WebDriverWait(bot,100).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[2]/div[4]/div/div/div/div/div/div/div[2]/div/form[1]/div[6]/div/span[2]'))).click()
+        WebDriverWait(bot,10).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[2]/div[4]/div/div/div/div/div/div/div[2]/div/form[1]/div[6]/div/span[2]'))).click()
     except:
         for _ in range(5):
             actions.send_keys('\ue004')
         actions.send_keys(' ')
         actions.perform()
-        WebDriverWait(bot,100).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[2]/div[4]/div/div/div/div/div/div/div[2]/div/form[1]/div[6]/div/span[2]'))).click()
+        WebDriverWait(bot,10).until(EC.element_to_be_clickable((By.XPATH, '/html/body/div[2]/div[4]/div/div/div/div/div/div/div[2]/div/form[1]/div[6]/div/span[2]'))).click()
         
     time.sleep(2)
     # '//*[@id="affiliate-register-container"]/div/div/div[2]/div/form[1]/div[6]/div/span[2]'
